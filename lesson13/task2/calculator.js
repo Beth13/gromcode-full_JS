@@ -7,3 +7,6 @@ export const getOddNumbers = (arr) => {
 };
 
 export default (a, b) => a + b;
+
+console.log(getSquaredNumbres([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(getOddNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9]));
