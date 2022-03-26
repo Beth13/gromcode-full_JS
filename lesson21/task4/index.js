@@ -17,8 +17,3 @@ export function getGoal() {
   const elemGoal = document.querySelector(".goal");
   return elemGoal.outerHTML;
 }
-
-console.log(getTitle());
-console.log(getDescription());
-console.log(getPlans());
-console.log(getGoal());
