@@ -20,5 +20,3 @@ export function finishList() {
   elemList3.textContent = "8";
   list.append(elemList3);
 }
-
-finishList();
