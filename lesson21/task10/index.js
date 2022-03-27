@@ -9,5 +9,3 @@ export function finishForm() {
   const elemForm = document.querySelector(".login-form");
   elemForm.prepend(elemInput);
 }
-
-finishForm();
