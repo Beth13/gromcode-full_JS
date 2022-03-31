@@ -2,9 +2,9 @@
 
 const buttonElem = document.querySelector(".single-use-btn");
 
-function Info() {
+function InfoButton() {
   console.log("clicked");
-  buttonElem.removeEventListener("click", Info);
+  buttonElem.removeEventListener("click", InfoButton);
 }
 
-buttonElem.addEventListener("click", Info);
+buttonElem.addEventListener("click", InfoButton);
