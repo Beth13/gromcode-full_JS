@@ -44,7 +44,7 @@ const changeTaskStatus = (event) => {
   renderTasks(tasks);
 };
 
-listElem.addEventListener("change", changeTaskStatus);
+listElem.addEventListener("click", changeTaskStatus);
 
 const addTasks = () => {
   const inputElem = document.querySelector(".task-input");
@@ -77,7 +77,7 @@ buttonELem.addEventListener("click", addTasks);
 // Вызываю renderTasks(tasks)
 
 // 2
-// Добавить addEventListener("change", changeFunc) чтобы менялся статус чекбокса при клике на него
+// Добавить addEventListener("click", changeFunc) чтобы менялся статус чекбокса при клике на него
 // Создаю переменную и переобразовываю значение event.target.dataset.id со стринга в число
 // Создаю currentTask и прохожусь по массиву тасков и ищу первую айди что совпала со значением
 // Меняю currentTask.done = !currentTask.done
