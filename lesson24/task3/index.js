@@ -1,6 +1,6 @@
 "use strict";
 
-const getDiff = (startDate, endDate) => {
+export const getDiff = (startDate, endDate) => {
   const timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
 
   const daysDiff = Math.floor(timeDiff / 1000 / 3600 / 24);
