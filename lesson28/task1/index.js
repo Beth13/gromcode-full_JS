@@ -8,16 +8,16 @@ export const calc = (initialValue) => {
       result += number;
       return this;
     },
+    subtract(number) {
+      result -= number;
+      return this;
+    },
     mult(number) {
       result *= number;
       return this;
     },
     div(number) {
       result /= number;
-      return this;
-    },
-    substract(number) {
-      result -= number;
       return this;
     },
     result() {
@@ -28,6 +28,6 @@ export const calc = (initialValue) => {
   return calculator;
 };
 
-const result = calc(3).add(2).mult(4).div(10).substract(5).result();
+const result = calc(3).add(2).mult(4).div(10).subtract(5).result();
 
 console.log(result);
