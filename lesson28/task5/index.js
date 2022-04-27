@@ -10,44 +10,84 @@
 //     "miliseconds",
 // ];
 
+// export const shmoment = (initialValue) => {
+//   const result = new Date(initialValue);
+
+//   const func = {
+//     add(value, num) {
+//       if (value === "days") {
+//         result.setDate(result.getDate() + num);
+//       } else if (value === "years") {
+//         result.setFullYear(result.getFullYear() + num);
+//       } else if (value === "months") {
+//         result.setMonth(result.getMonth() + num);
+//       } else if (value === "hours") {
+//         result.setHours(result.getHours() + num);
+//       } else if (value === "minutes") {
+//         result.setMinutes(result.getMinutes() + num);
+//       } else if (value === "seconds") {
+//         result.setSeconds(result.getSeconds() + num);
+//       } else if (value === "milliseconds") {
+//         result.setMilliseconds(result.getMilliseconds() + num);
+//       }
+//       return this;
+//     },
+//     subtract(value, num) {
+//       if (value === "days") {
+//         result.setDate(result.getDate() - num);
+//       } else if (value === "years") {
+//         result.setFullYear(result.getFullYear() - num);
+//       } else if (value === "months") {
+//         result.setMonth(result.getMonth() - num);
+//       } else if (value === "hours") {
+//         result.setHours(result.getHours() - num);
+//       } else if (value === "minutes") {
+//         result.setMinutes(result.getMinutes() - num);
+//       } else if (value === "seconds") {
+//         result.setSeconds(result.getSeconds() - num);
+//       } else if (value === "milliseconds") {
+//         result.setMilliseconds(result.getMilliseconds() - num);
+//       }
+//       return this;
+//     },
+//     result() {
+//       return result;
+//     },
+//   };
+
+//   return func;
+// };
+
+const getDateValue = {
+  years: "getFullYear",
+  months: "getMonth",
+  days: "getDate",
+  hours: "getHours",
+  minutes: "getMinutes",
+  seconds: "getSeconds",
+  milliseconds: "getMilliseconds",
+};
+
+const setDateValue = {
+  years: "setFullYear",
+  months: "setMonth",
+  days: "setDate",
+  hours: "setHours",
+  minutes: "setMinutes",
+  seconds: "setSeconds",
+  milliseconds: "setMilliseconds",
+};
+
 export const shmoment = (initialValue) => {
   const result = new Date(initialValue);
 
   const func = {
-    add(value, num) {
-      if (value === "days") {
-        result.setDate(result.getDate() + num);
-      } else if (value === "years") {
-        result.setFullYear(result.getFullYear() + num);
-      } else if (value === "months") {
-        result.setMonth(result.getMonth() + num);
-      } else if (value === "hours") {
-        result.setHours(result.getHours() + num);
-      } else if (value === "minutes") {
-        result.setMinutes(result.getMinutes() + num);
-      } else if (value === "seconds") {
-        result.setSeconds(result.getSeconds() + num);
-      } else if (value === "milliseconds") {
-        result.setMilliseconds(result.getMilliseconds() + num);
-      }
+    add(type, num) {
+      result[setDateValue[type]](result[getDateValue[type]]() + num);
       return this;
     },
-    subtract(value, num) {
-      if (value === "days") {
-        result.setDate(result.getDate() - num);
-      } else if (value === "years") {
-        result.setFullYear(result.getFullYear() - num);
-      } else if (value === "months") {
-        result.setMonth(result.getMonth() - num);
-      } else if (value === "hours") {
-        result.setHours(result.getHours() - num);
-      } else if (value === "minutes") {
-        result.setMinutes(result.getMinutes() - num);
-      } else if (value === "seconds") {
-        result.setSeconds(result.getSeconds() - num);
-      } else if (value === "milliseconds") {
-        result.setMilliseconds(result.getMilliseconds() - num);
-      }
+    subtract(type, num) {
+      result[setDateValue[type]](result[getDateValue[type]]() - num);
       return this;
     },
     result() {
