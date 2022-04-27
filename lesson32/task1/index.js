@@ -10,7 +10,9 @@ const asyncNumber2 = getValue(1000);
 const asyncNumber3 = getValue(10);
 
 const getSum = (numbers) =>
-  numbers.filter((value) => !isNaN(value)).reduce((acc, num) => acc + num, 0);
+  numbers
+    .filter((value) => !isNaN(value))
+    .reduce((acc, num) => acc + Number(num), 0);
 
 export const asyncSum = (...asyncNumbers) =>
   Promise.all(asyncNumbers)
