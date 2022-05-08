@@ -3,8 +3,8 @@ const baseUrl = "https://6272c6bfa6522e24ac3e537b.mockapi.io/v1/users";
 const formElem = document.querySelector(".login-form");
 const buttonElem = document.querySelector(".submit-button");
 const emailInput = document.querySelector('input[name = "email"]');
-const userNameInput = document.querySelector('.form-input[name="name"]');
-const userPassInput = document.querySelector('.form-input[name="password"]');
+const userNameInput = document.querySelector('.form-input[name = "name"]');
+const userPassInput = document.querySelector('.form-input[name = "password"]');
 
 // ----------------------------------------------------
 const isFormValidCheck = () => {
@@ -40,7 +40,7 @@ const onCreateUserHandler = (event) => {
 
   createUser(newUser)
     .then((response) => response.json())
-    .then((user) => alert(JSON.stringify(user)))
+    .then((response) => alert(JSON.stringify(response)))
     .then(() => {
       emailInput.value = "";
       userNameInput.value = "";
