@@ -18,15 +18,15 @@ const isFormValidCheck = () => {
 // ----------------------------------------------------
 formElem.addEventListener("input", isFormValidCheck);
 // ----------------------------------------------------
-function createUser(userData) {
+const createUser = (userData) => {
   return fetch(baseUrl, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json;charset=utf-8",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(userData),
   });
-}
+};
 
 // ----------------------------------------------------
 const onCreateUserHandler = (event) => {
@@ -38,10 +38,11 @@ const onCreateUserHandler = (event) => {
     password: userPassInput.value,
   };
 
-  const newUserStr = JSON.stringify(newUser);
+  // const newUserStr = JSON.stringify(newUser);
   // console.log(newUserStr);
+  // console.log(typeof newUserStr);
 
-  createUser(newUserStr)
+  createUser(newUser)
     .then((response) => response.json())
     .then((response) => alert(JSON.stringify(response)))
     .then(() => {
