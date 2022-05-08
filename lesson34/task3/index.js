@@ -38,7 +38,10 @@ const onCreateUserHandler = (event) => {
     password: userPassInput.value,
   };
 
-  createUser(newUser)
+  const newUserStr = JSON.stringify(newUser);
+  // console.log(newUserStr);
+
+  createUser(newUserStr)
     .then((response) => response.json())
     .then((response) => alert(JSON.stringify(response)))
     .then(() => {
