@@ -40,8 +40,11 @@ const onCreateUserHandler = (event) => {
 
   createUser(newUser)
     .then((response) => response.json())
-    .then((response) => JSON.stringify(response))
-    .then((response) => alert(response))
+    .then((response) => {
+      const userInStr = JSON.stringify(response);
+      alert(userInStr);
+    })
+
     .then(() => {
       emailInput.value = "";
       userNameInput.value = "";
