@@ -32,10 +32,6 @@ function createUser(userData) {
 const onCreateUserHandler = (event) => {
   event.preventDefault();
 
-  emailInput.value = "";
-  userNameInput.value = "";
-  userPassInput.value = "";
-
   const newUser = {
     email: emailInput.value,
     userName: userNameInput.value,
@@ -44,7 +40,12 @@ const onCreateUserHandler = (event) => {
 
   createUser(newUser)
     .then((response) => response.json())
-    .then((response) => alert(JSON.stringify(response)));
+    .then((response) => alert(JSON.stringify(response)))
+    .then(() => {
+      emailInput.value = "";
+      userNameInput.value = "";
+      userPassInput.value = "";
+    });
 };
 
 buttonElem.addEventListener("click", onCreateUserHandler);
