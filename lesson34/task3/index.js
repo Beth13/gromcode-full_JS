@@ -1,5 +1,4 @@
-const baseUrl =
-  "https://crudcrud.com/api/6430d2660dd34f91a4295ed4b47675e6/users";
+const baseUrl = "https://6272c6bfa6522e24ac3e537b.mockapi.io/v1/users";
 
 const formElem = document.querySelector(".login-form");
 const buttonElem = document.querySelector(".submit-button");
@@ -38,10 +37,6 @@ const onCreateUserHandler = (event) => {
     userName: userNameInput.value,
     password: userPassInput.value,
   };
-
-  // const newUserStr = JSON.stringify(newUser);
-  // console.log(newUserStr);
-  // console.log(typeof newUserStr);
 
   createUser(newUser)
     .then((response) => response.json())
