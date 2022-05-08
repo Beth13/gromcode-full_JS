@@ -2,7 +2,7 @@ const baseUrl = "https://6272c6bfa6522e24ac3e537b.mockapi.io/v1/users";
 
 const formElem = document.querySelector(".login-form");
 const buttonElem = document.querySelector(".submit-button");
-const emailInput = document.querySelector('input[name = "email"]');
+const emailInput = document.querySelector('.form-input[name = "email"]');
 const userNameInput = document.querySelector('.form-input[name = "name"]');
 const userPassInput = document.querySelector('.form-input[name = "password"]');
 
