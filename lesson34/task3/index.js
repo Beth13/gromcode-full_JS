@@ -34,7 +34,7 @@ const onCreateUserHandler = (event) => {
 
   const newUser = {
     email: emailInput.value,
-    userName: userNameInput.value,
+    name: userNameInput.value,
     password: userPassInput.value,
   };
 
