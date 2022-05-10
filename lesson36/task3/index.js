@@ -3,7 +3,7 @@
 const getUsersBlogs = async (users) => {
   const usersArray = users.map((userId) => {
     const response = fetch(`https://api.github.com/users/${userId}`)
-      .then((response) => {
+      .catch((response) => {
         if (!response.ok) {
           throw new Error("Failed to get user data");
         }
