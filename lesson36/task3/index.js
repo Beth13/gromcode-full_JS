@@ -1,18 +1,21 @@
 "use strict";
 
-const getUsersBlogs = (users) => {
-  return Promise.all(
-    users.map(async (userId) => {
-      const response = await fetch(`https://api.github.com/users/${userId}`);
+const getUsersBlogs = async (users) => {
+  const usersArray = users.map((userId) => {
+    const response = fetch(`https://api.github.com/users/${userId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to get user data");
+        }
+      })
+      .then((userData) => userData.json())
+      .then((userData) => userData.blog);
 
-      if (!response.ok) {
-        throw new Error("Failed to get user data");
-      }
+    return response;
+  });
 
-      const userData = await response.json();
-      return userData.blog;
-    })
-  );
+  const result = await Promise.all(usersArray);
+  return result;
 };
 
 // examples
